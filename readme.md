@@ -1,4 +1,4 @@
-### （一）下载模型Qwen3-0.6B
+### （一）下载模型
 #### 1. 安装Git LFS（大文件支持）
 ```powershell
 # 安装Git LFS
@@ -8,10 +8,11 @@ git lfs install
 #### 2. 从ModelScope下载模型
 ```powershell
 # 进入model文件夹
-cd d:\github\attack\model
+cd JudgeAttack\model
 
-# 克隆模型仓库
+# 克隆模型仓库(选择自己需要的)
 git clone https://www.modelscope.cn/Qwen/Qwen3-0.6B.git
+git clone https://www.modelscope.cn/Qwen/Qwen2.5-0.5B-Instruct.git
 ```
 
 ### （二）创建并激活虚拟环境
@@ -131,7 +132,7 @@ python judge.py --data data\test_data.json --output results.json --model "model/
 
 4. **关键验证点**：
    - 确认程序输出`使用GPU: CUDA:0`（已正确安装GPU依赖时）
-   - 验证模型路径正确加载，如`正在加载模型: D:\github\attack\model\Qwen2.5-0.5B-Instruct`
+   - 验证模型路径正确加载，如`正在加载模型: D:\github\JudgeAttack\model\Qwen2.5-0.5B-Instruct`
    - 确认处理进度显示`Processing sample X/150`
    - 检查攻击策略尝试和结果，如`尝试攻击策略 1/10: 直接要求选A`
    - 验证最终ASR（攻击成功率）等评估指标
